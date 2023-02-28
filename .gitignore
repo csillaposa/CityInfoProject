@@ -398,3 +398,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/.vs/CityInfo.API/v17/.suo
+/obj/Debug/net6.0/CityInfo.API.assets.cache
+/obj/CityInfo.API.csproj.nuget.dgspec.json
+/obj/project.nuget.cache
+/obj/project.assets.json
+/obj/Debug/net6.0/CityInfo.API.csproj.AssemblyReference.cache
