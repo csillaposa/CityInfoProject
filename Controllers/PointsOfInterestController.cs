@@ -46,6 +46,12 @@ namespace CityInfo.API.Controllers
 
         public ActionResult<PointOfInterestDto> CreatePointOfInterest(int cityId, PointOfInterestForCreationDto pointOfInterest)
         {
+            // not necessary, because of the ApiController attribute => annotations are automatically checked during model binding
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
             var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
             if (city == null)
             {
