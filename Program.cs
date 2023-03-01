@@ -1,3 +1,4 @@
+using CityInfo.API.Services;
 using Microsoft.AspNetCore.StaticFiles;
 using Serilog;
 
@@ -31,6 +32,9 @@ builder.Services.AddSwaggerGen();
 
 // To inject a file extension content type
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
+
+// to register a custom service:
+builder.Services.AddTransient<LocalMailService>();
 
 var app = builder.Build();
 
