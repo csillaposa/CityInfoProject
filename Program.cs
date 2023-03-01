@@ -1,12 +1,23 @@
 using Microsoft.AspNetCore.StaticFiles;
+using Serilog;
+
+// installed Serilog logging packages, need to configure
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .WriteTo.Console()
+    .WriteTo.File("logs/cityinfo.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 // CreateBuilder automatically configures a set of logging providers
 // can be changed:
 // all the configured providers are cleared:
-builder.Logging.ClearProviders();
+// builder.Logging.ClearProviders();
 // manually calling a console logger:
-builder.Logging.AddConsole();
+// builder.Logging.AddConsole();
+
+// to use Serilog instead of the built in logger:
+builder.Host.UseSerilog();
 
 // Add services to the container.
 builder.Services.AddControllers(options =>
