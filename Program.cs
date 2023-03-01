@@ -1,9 +1,14 @@
 using Microsoft.AspNetCore.StaticFiles;
 
 var builder = WebApplication.CreateBuilder(args);
+// CreateBuilder automatically configures a set of logging providers
+// can be changed:
+// all the configured providers are cleared:
+builder.Logging.ClearProviders();
+// manually calling a console logger:
+builder.Logging.AddConsole();
 
 // Add services to the container.
-
 builder.Services.AddControllers(options =>
 {
     options.ReturnHttpNotAcceptable = true;
