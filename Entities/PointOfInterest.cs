@@ -13,6 +13,10 @@ namespace CityInfo.API.Entities
         [MaxLength(50)]
         public string Name { get; set; }
 
+        [MaxLength(200)]
+
+        public string Description { get; set; }
+
         // we want to signify the relation btw City and Point of Interest
         // navigation property => relationship will be created (foreign key will be the id of the city)
         [ForeignKey("CityId")]

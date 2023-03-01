@@ -48,7 +48,10 @@ builder.Services.AddTransient<IMailService, CloudMailService>();
 builder.Services.AddSingleton<CitiesDataStore>();
 
 // registering DbContext service
-builder.Services.AddDbContext<CityInfoContext>(dbContextOptions => dbContextOptions.UseSqlite("Data Source= CityInfo.db"));
+builder.Services.AddDbContext<CityInfoContext>(
+    dbContextOptions => dbContextOptions.UseSqlite(
+        builder.Configuration["ConnectionStrings:CityInfoDBConnectionString"]));
+// we can set up the connection strings for different environments
 
 var app = builder.Build();
 
