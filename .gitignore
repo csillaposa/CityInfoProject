@@ -404,3 +404,6 @@ FodyWeavers.xsd
 /obj/project.nuget.cache
 /obj/project.assets.json
 /obj/Debug/net6.0/CityInfo.API.csproj.AssemblyReference.cache
+/CityInfo.API.csproj
+/obj/CityInfo.API.csproj.nuget.g.props
+/obj/CityInfo.API.csproj.nuget.g.targets
