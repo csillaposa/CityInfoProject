@@ -55,6 +55,9 @@ builder.Services.AddDbContext<CityInfoContext>(
 
 builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 
+// registering the auto mapper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
