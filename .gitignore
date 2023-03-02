@@ -407,3 +407,5 @@ FodyWeavers.xsd
 /CityInfo.API.csproj
 /obj/CityInfo.API.csproj.nuget.g.props
 /obj/CityInfo.API.csproj.nuget.g.targets
+/CityInfo.db-shm
+/CityInfo.db-wal

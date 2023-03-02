@@ -53,6 +53,8 @@ builder.Services.AddDbContext<CityInfoContext>(
         builder.Configuration["ConnectionStrings:CityInfoDBConnectionString"]));
 // we can set up the connection strings for different environments
 
+builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
