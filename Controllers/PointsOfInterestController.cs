@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace CityInfo.API.Controllers
 {
     [Route("api/cities/{cityId}/pointsofinterest")]
-    [Authorize(Policy = "MustBeFromCopenhagen")]
+    //[Authorize(Policy = "MustBeFromCopenhagen")]
     [ApiController]
     public class PointsOfInterestController : ControllerBase
     {
