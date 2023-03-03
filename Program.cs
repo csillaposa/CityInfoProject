@@ -77,6 +77,15 @@ builder.Services.AddAuthentication("Bearer")
         }
     );
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("MustBeFromCopenhagen", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        policy.RequireClaim("city", "Copenhagen");
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
